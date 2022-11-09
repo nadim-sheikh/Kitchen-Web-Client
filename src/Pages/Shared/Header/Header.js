@@ -11,13 +11,15 @@ const Header = () => {
   }
 
   const navList = <>
-    <Link to='/home'><p className='text-xl text-orange-400 ml-5'>Home</p></Link>
-    <Link to='/food-items'><p className='text-xl text-orange-400 ml-5'>Food Items</p></Link>
-    <Link to='/home'><p className='text-xl text-orange-400 ml-5'>About</p></Link>
-    {user?.email ? <Link onClick={handleLogOut}><p className='text-xl text-orange-400 ml-5'>Log Out</p></Link>
+    <Link to='/home'><p className='text-xl font-semibold ml-5'>Home</p></Link>
+    <Link to='/food-items'><p className='text-xl font-semibold ml-5'>Food Items</p></Link>
+    <Link to='/blog'><p className='text-xl font-semibold ml-5'>Blog</p></Link>
+    {
+    user?.email ? 
+    <Link onClick={handleLogOut}><p className='text-xl font-semibold ml-5'>Log Out</p></Link>
       : <>
-        <Link to='/login'><p className='text-xl text-orange-400 ml-5'>Log In</p></Link>
-        <Link to='/signup'><p className='text-xl text-orange-400 ml-5'>Sign Up</p></Link>
+        <Link to='/login'><p className='text-xl font-semibold ml-5'>Log In</p></Link>
+        <Link to='/signup'><p className='text-xl font-semibold ml-5'>Sign Up</p></Link>
       </>
     }
   </>
@@ -35,14 +37,14 @@ const Header = () => {
         </div>
         <div className='flex items-center'>
           <img className='w-20' src="https://i.postimg.cc/6pC8wMWW/2-copy.png" alt="" />
-          <Link className="text-orange-400 font-bold text-3xl">RIFAT KITCHEN</Link>
+          <Link to='/' className="text-orange-400 font-bold text-3xl">RIFAT KITCHEN</Link>
         </div>
       </div>
       <div className="navbar-center hidden lg:flex">
         {navList}
       </div>
       <div className="navbar-end">
-        <Link className="bg-orange-400 text-white hover:text-orange-400 hover:bg-white duration-300 hover:border-2 hover:border-orange-400 px-4 py-3 text-xl font-semibold rounded-md">Add Food Item</Link>
+        <Link to='/addFood' className="bg-orange-400 text-white hover:text-orange-400 hover:bg-white duration-300 hover:border-2 hover:border-orange-400 px-4 py-3 text-xl font-semibold rounded-md">Add Food Item</Link>
 
         <div className="ml-5 dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle avatar">

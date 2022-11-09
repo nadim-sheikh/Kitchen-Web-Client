@@ -1,12 +1,14 @@
 import { GoogleAuthProvider } from 'firebase/auth';
 import React, { useContext } from 'react';
 import { FaHandPointer } from 'react-icons/fa';
-import { Form, Link, useNavigate } from 'react-router-dom';
+import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../Context/AuthProvider/AuthProvider';
 
 const SignUp = () => {
     const { providerLogin, createUser, updateUserProfile } = useContext(AuthContext)
     const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || '/';
 
     const googleProvider = new GoogleAuthProvider();
 
@@ -31,7 +33,7 @@ const SignUp = () => {
                 const user = result.user;
                 console.log(user);
                 form.reset();
-                navigate('/')
+                navigate(from, {replace: true})
                 handleUpdateUserProfile(name, photoURL)
             }).catch(err => console.error(err))
         console.log(name, photoURL, email, password);
