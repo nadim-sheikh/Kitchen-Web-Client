@@ -7,7 +7,7 @@ const MyReviews = () => {
     const { user } = useContext(AuthContext);
     const [allReview, setAllReview] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/review?email=${user.email}`)
+        fetch(`https://rifat-kitchen-server.vercel.app/review?email=${user.email}`)
             .then(res => res.json())
             .then(data => setAllReview(data))
     }, [user?.email])

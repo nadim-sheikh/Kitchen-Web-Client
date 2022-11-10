@@ -27,12 +27,12 @@ const router = createBrowserRouter([
             {
                 path: '/food-items',
                 element:<FoodItems/>,
-                loader: () => fetch('http://localhost:5000/FoodItem'),
+                loader: () => fetch('https://rifat-kitchen-server.vercel.app/FoodItem'),
             },
             {
                 path: '/food-items/:id',
                 element: <PrivateRoute><FoodDetails/></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/FoodItem/${params.id}`),
+                loader: ({params}) => fetch(`https://rifat-kitchen-server.vercel.app/FoodItem/${params.id}`),
             },
             {
                 path: '/signup',

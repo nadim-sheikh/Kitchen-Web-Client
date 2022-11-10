@@ -26,7 +26,7 @@ const FoodDetails = () => {
       email: email
     };
     console.log(reviewInfo);
-    fetch('http://localhost:5000/review', {
+    fetch('https://rifat-kitchen-server.vercel.app/review', {
       method: 'POST',
       headers: {
         "content-type": "application/json"
@@ -41,14 +41,14 @@ const FoodDetails = () => {
   const [foodReviews, setReview] = useState([]);
 
   useEffect(() => {
-    fetch('http://localhost:5000/review')
+    fetch('https://rifat-kitchen-server.vercel.app/review')
       .then(res => res.json())
       .then(data => setReview(data))
   }, [])
 
   const [allReview, setAllReview] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/review?email=${user.email}`)
+    fetch(`https://rifat-kitchen-server.vercel.app/review?email=${user.email}`)
       .then(res => res.json())
       .then(data => setAllReview(data))
   }, [user?.email])

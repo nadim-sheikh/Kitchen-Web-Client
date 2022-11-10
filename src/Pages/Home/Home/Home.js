@@ -8,7 +8,7 @@ const Home = () => {
      const [foodsItem, setFoodItem] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/limitFoodItem')
+        fetch('https://rifat-kitchen-server.vercel.app/limitFoodItem')
             .then(res => res.json())
             .then(data => setFoodItem(data))
     }, [])

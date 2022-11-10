@@ -25,7 +25,6 @@ const SingleFood = ({ food }) => {
                 <p className='font-semibold text-gray-500'>Rating:<span className='font-semibold text-orange-400'>{rating}</span></p>
                 <div className="card-actions justify-end">
                     <Link to={`/food-items/${_id}`}><button className="bg-orange-400 hover:bg-orange-600  duration-300 py-3 px-5 rounded-md font-semibold text-white">Details</button></Link>
-                    <Link><button className="bg-orange-400 hover:bg-orange-600  duration-300 py-3 px-5 rounded-md font-semibold text-white">Delete Item</button></Link>
                 </div>
 
             </div>

@@ -10,7 +10,7 @@ const AddFoodItem = () => {
             rating: e.target.rating.value,
         };
         console.log(foodInfo);
-        fetch('http://localhost:5000/FoodItem', {
+        fetch('https://rifat-kitchen-server.vercel.app/FoodItem', {
             method: "POST",
             headers: {
                 "content-type": "application/json"
