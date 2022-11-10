@@ -4,9 +4,11 @@ import AddFoodItem from "../Pages/AddFoodItem/AddFoodItem";
 import Login from "../Pages/Authentication/Login/Login";
 import SignUp from "../Pages/Authentication/SignUp/SignUp";
 import Blog from "../Pages/Blog/Blog";
+import Error from "../Pages/Error/Error";
 import FoodDetails from "../Pages/FoodItems/FoodDetails";
 import FoodItems from "../Pages/FoodItems/FoodItems";
 import Home from "../Pages/Home/Home/Home";
+import MyReviews from "../Pages/MyReviews/MyReviews";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -30,7 +32,7 @@ const router = createBrowserRouter([
             {
                 path: '/food-items/:id',
                 element: <PrivateRoute><FoodDetails/></PrivateRoute>,
-                loader: ({params}) => fetch(`http://localhost:5000/FoodItem/${params.id}`)
+                loader: ({params}) => fetch(`http://localhost:5000/FoodItem/${params.id}`),
             },
             {
                 path: '/signup',
@@ -47,6 +49,14 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element:<Blog/>,
+            },
+            {
+                path: '/reviews',
+                element:<PrivateRoute><MyReviews/></PrivateRoute>,
+            },
+            {
+                path: '*',
+                element:<Error/>
             },
         ]
     }

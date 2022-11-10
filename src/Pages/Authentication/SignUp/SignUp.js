@@ -36,7 +36,6 @@ const SignUp = () => {
                 navigate(from, {replace: true})
                 handleUpdateUserProfile(name, photoURL)
             }).catch(err => console.error(err))
-        console.log(name, photoURL, email, password);
     }
 
     const handleUpdateUserProfile = (name, photoURL) => {
@@ -46,7 +45,9 @@ const SignUp = () => {
         }
 
         updateUserProfile(profile)
-            .then(() => { })
+            .then(() => { 
+                handleUpdateUserProfile(profile)
+             })
             .catch(error => console.error(error));
     }
 

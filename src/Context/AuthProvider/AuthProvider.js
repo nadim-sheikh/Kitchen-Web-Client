@@ -42,7 +42,7 @@ const updateUserProfile = (profile) => {
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (currentUser) => {
-            console.log('inside auth state change', currentUser);
+            console.log(currentUser);
             setUser(currentUser)
             setLoading(false)
         });

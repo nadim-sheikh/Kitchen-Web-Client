@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import FoodItemHome from '../FoodItemHome';
+import OurKItchen from '../OurKItchen';
 
 const Home = () => {
      const [foodsItem, setFoodItem] = useState([]);
@@ -31,6 +32,9 @@ const Home = () => {
                 }
                 </div>
                 <Link to='/food-items' className='text-orange-400 hover:text-orange-600  duration-300 text-center'>See More...</Link>
+            </div>
+            <div className='mx-auto'>
+                <OurKItchen/>
             </div>
         </div>
     );
