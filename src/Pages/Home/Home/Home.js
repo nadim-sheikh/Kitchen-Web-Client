@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import BestFood from '../BestFood';
 import FoodItemHome from '../FoodItemHome';
 import OurKItchen from '../OurKItchen';
 
@@ -33,9 +34,15 @@ const Home = () => {
                 </div>
                 <Link to='/food-items' className='text-orange-400 hover:text-orange-600  duration-300 text-center'>See More...</Link>
             </div>
-            <div className='mx-auto'>
+            <div className='my-20'>
+                <BestFood/>
+            </div>
+           <div>
+           <h1 className='text-4xl text-center font-bold text-orange-400 mb-5'>Contact US</h1>
+            <div className='text-center bg-orange-300 rounded-md py-20'>
                 <OurKItchen/>
             </div>
+           </div>
         </div>
     );
 };
